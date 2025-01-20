@@ -52,7 +52,9 @@ func (r *ApplicationReconciler) Reconcile(ctx context.Context, req ctrl.Request)
 
 	// TODO(user): your logic here
 
-	fmt.Println("----------------test-------------------")
+<<<<<<< HEAD
+=======
+>>>>>>> 2177a1a187f90ced329ee056bdd8a59e2ce4ab3c
 	return ctrl.Result{}, nil
 }
 
