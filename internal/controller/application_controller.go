@@ -51,10 +51,7 @@ func (r *ApplicationReconciler) Reconcile(ctx context.Context, req ctrl.Request)
 	_ = log.FromContext(ctx)
 
 	// TODO(user): your logic here
-
-<<<<<<< HEAD
-=======
->>>>>>> 2177a1a187f90ced329ee056bdd8a59e2ce4ab3c
+	fmt.Println("-------------------------test-------------------------")
 	return ctrl.Result{}, nil
 }
 

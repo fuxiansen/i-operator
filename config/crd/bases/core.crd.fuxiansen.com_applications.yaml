@@ -39,13 +39,22 @@ spec:
           spec:
             description: ApplicationSpec defines the desired state of Application.
             properties:
-              foo:
-                description: Foo is an example field of Application. Edit application_types.go
-                  to remove/update
+              enabled:
+                type: boolean
+              image:
+                description: |-
+                  Foo is an example field of Application. Edit application_types.go to remove/update
+                  Foo     string `json:"foo,omitempty"`
                 type: string
             type: object
           status:
             description: ApplicationStatus defines the observed state of Application.
+            properties:
+              ready:
+                description: |-
+                  INSERT ADDITIONAL STATUS FIELD - define observed state of cluster
+                  Important: Run "make" to regenerate code after modifying this file
+                type: boolean
             type: object
         type: object
     served: true
