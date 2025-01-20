@@ -1,5 +1,5 @@
 # Build the manager binary
-FROM golang:1.23 AS builder
+FROM 192.168.126.106:81/fuxiansen/golang:1.23 AS builder
 ARG TARGETOS
 ARG TARGETARCH
 
