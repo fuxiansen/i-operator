@@ -17,6 +17,7 @@ limitations under the License.
 package v1
 
 import (
+	corev1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 
@@ -24,14 +25,11 @@ import (
 // NOTE: json tags are required.  Any new fields you add must have json tags for the fields to be serialized.
 
 // ApplicationSpec defines the desired state of Application.
+// application_types.go
 type ApplicationSpec struct {
-	// INSERT ADDITIONAL SPEC FIELDS - desired state of cluster
-	// Important: Run "make" to regenerate code after modifying this file
-
-	// Foo is an example field of Application. Edit application_types.go to remove/update
-	// Foo     string `json:"foo,omitempty"`
-	Image   string `json:"image,omitempty"`
-	Enabled bool   `json:"enabled,omitempty"`
+	// +kubebuilder:validation:Minimum=0
+	Replicas int32                  `json:"replicas"`
+	Template corev1.PodTemplateSpec `json:"template"` // 修改类型
 }
 
 // ApplicationStatus defines the observed state of Application.
