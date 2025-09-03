@@ -25,4 +25,11 @@ resources:
 - application_admin_role.yaml
 - application_editor_role.yaml
 - application_viewer_role.yaml
+patches:
+- path: role_patch.yaml
+  target:
+    group: rbac.authorization.k8s.io
+    kind: ClusterRole
+    name: manager-role
+    version: v1
 

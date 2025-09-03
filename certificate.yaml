@@ -1,0 +1,12 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: webhook-cert
+  namespace: i-operator-system
+spec:
+  secretName: webhook-server-cert  # 必须与 Operator 配置的 certDir 匹配
+  issuerRef:
+    name: selfsigned-issuer
+    kind: ClusterIssuer
+  dnsNames:
+  - webhook-service.i-operator-system.svc  # 必须匹配 Webhook Service 的 DNS
